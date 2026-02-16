@@ -14,6 +14,7 @@ import Pricing from './components/Pricing';
 import FAQ from './components/FAQ';
 import Footer from './components/Footer';
 import StickyCTA from './components/StickyCTA';
+import LegalSupport from './components/LegalSupport';
 
 const App: React.FC = () => {
   const [showSticky, setShowSticky] = useState(false);
@@ -39,6 +40,7 @@ const App: React.FC = () => {
       <Pricing />
       <FAQ />
       <Footer />
+      <LegalSupport />
       {showSticky && <StickyCTA />}
     </div>
   );

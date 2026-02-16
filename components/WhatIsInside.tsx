@@ -1,55 +1,58 @@
 
 import React from 'react';
-import { CheckCircle2, ChevronRight } from 'lucide-react';
+import { Lock, ChevronRight, ShieldCheck } from 'lucide-react';
 
 const WhatIsInside: React.FC = () => {
   const modules = [
-    { num: "01", title: "Psicología de la Riqueza Familiar", focus: "Rompiendo los techos de cristal heredados." },
-    { num: "02", title: "La Estructura Bancaria", focus: "Cómo organizar los roles: Tesorero, Auditor y Socios." },
-    { num: "03", title: "El Acta Constitutiva", focus: "Estatutos reales para que el banco perdure años." },
-    { num: "04", title: "Mecánica de Captación", focus: "Cómo convertir gastos hormiga en capital de inversión." },
-    { num: "05", title: "Créditos de Honor", focus: "Financiando sueños familiares sin burocracia externa." },
-    { num: "06", title: "Inversión en la Nueva Economía", focus: "Activos digitales y diversificación inteligente." },
-    { num: "07", title: "El Ritual del Balance", focus: "Reuniones que celebran el avance, no el castigo." },
-    { num: "08", title: "Educación de Próxima Generación", focus: "Actividades prácticas para niños de 5 a 18 años." }
+    { num: "01", title: "El Algoritmo Mental", focus: "Eliminando el virus de la deuda bancaria innecesaria." },
+    { num: "02", title: "Arquitectura del Banco", focus: "Roles estratégicos: Del Tesorero al Auditor de Linaje." },
+    { num: "03", title: "El Acta de Soberanía", focus: "Documentos legales internos que blindan tu apellido." },
+    { num: "04", title: "Captación Maestro", focus: "Cómo 'robarle' intereses al banco para tu familia." },
+    { num: "05", title: "Ciclo de Fechas Clave", focus: "Planificación táctica para eventos importantes sin estrés." },
+    { num: "06", title: "Factoría de Activos", focus: "Iniciación en finanzas personales y activos digitales." },
+    { num: "07", title: "Reuniones de Élite", focus: "El ritual que fortalece lazos y celebra dividendos." },
+    { num: "08", title: "Legado Generacional", focus: "Entrenando a los socios del futuro (tus hijos)." }
   ];
 
   return (
-    <section className="py-32 bg-[#080808]">
+    <section className="py-40 bg-[#080808]">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col lg:flex-row gap-20">
+        <div className="flex flex-col lg:flex-row gap-24">
           <div className="lg:w-2/5">
-            <h2 className="text-4xl md:text-5xl font-serif font-bold mb-8 leading-tight italic">Tu Manual de Operaciones Financieras</h2>
-            <p className="text-lg text-slate-400 mb-10 font-light leading-relaxed">
-              Recibirás el método paso a paso que Alexander Rincon usa en su propia familia para mantener la unión y el crecimiento constante.
+            <h2 className="text-4xl md:text-6xl font-serif font-bold mb-8 leading-tight italic">Descifra el Sistema Digital.</h2>
+            <p className="text-xl text-slate-400 mb-12 font-light leading-relaxed">
+              Recibirás el código fuente que Lex R diseñó para que su propia familia dejara de ser dependiente de entidades financieras externas.
             </p>
-            <ul className="space-y-6">
+            <div className="space-y-6">
               {[
-                "Manual Digital 'El Banco Familiar'",
-                "Plantillas de Excel Automatizadas",
-                "Modelos de Actas y Reglamentos",
-                "Guía de Dinámicas con Niños"
+                "Dossier Digital 'El Código FAMIBAN'",
+                "Calculadora de Captación Automatizada",
+                "Plantillas de Actas de Soberanía",
+                "Protocolo de Fechas Importantes"
               ].map((item, i) => (
-                <li key={i} className="flex items-center gap-4 text-white font-medium group">
-                  <div className="p-1 bg-amber-500 rounded-full group-hover:scale-125 transition-transform">
-                    <CheckCircle2 size={16} className="text-black" />
+                <div key={i} className="flex items-center gap-4 text-white font-medium group">
+                  <div className="p-1.5 bg-emerald-500 rounded-lg group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(16,185,129,0.3)]">
+                    <ShieldCheck size={18} className="text-black" />
                   </div>
-                  <span className="tracking-tight italic">{item}</span>
-                </li>
+                  <span className="tracking-tight italic text-lg">{item}</span>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
           
           <div className="lg:w-3/5">
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid sm:grid-cols-2 gap-6">
               {modules.map((m, idx) => (
-                <div key={idx} className="p-8 bg-black rounded-3xl border border-white/5 hover:border-amber-500/20 transition-all group">
-                  <span className="text-amber-500 font-black text-xs uppercase tracking-widest block mb-4 opacity-50">Módulo {m.num}</span>
-                  <h4 className="text-xl font-bold mb-3 text-white group-hover:text-amber-400 flex items-center gap-2">
+                <div key={idx} className="p-10 bg-black rounded-[40px] border border-white/5 hover:border-emerald-500/30 transition-all group relative overflow-hidden">
+                  <div className="absolute top-0 right-0 p-6 text-emerald-500/5 group-hover:text-emerald-500/10 transition-colors">
+                    <Lock size={60} />
+                  </div>
+                  <span className="text-emerald-500 font-black text-[10px] uppercase tracking-[0.4em] block mb-6 opacity-60">Fase {m.num}</span>
+                  <h4 className="text-2xl font-bold mb-4 text-white group-hover:text-emerald-400 flex items-center gap-2 font-serif italic">
                     {m.title}
-                    <ChevronRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                   </h4>
-                  <p className="text-slate-500 text-sm italic font-light">{m.focus}</p>
+                  <p className="text-slate-500 text-sm italic font-light leading-relaxed">{m.focus}</p>
+                  <ChevronRight size={16} className="mt-6 text-emerald-500 opacity-0 group-hover:opacity-100 transition-all translate-x-[-10px] group-hover:translate-x-0" />
                 </div>
               ))}
             </div>

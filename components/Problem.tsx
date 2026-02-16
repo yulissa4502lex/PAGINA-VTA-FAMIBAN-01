@@ -1,55 +1,57 @@
 
 import React from 'react';
-import { AlertTriangle, TrendingDown, Users, DollarSign } from 'lucide-react';
+import { AlertCircle, Landmark, TrendingDown, Clock, Ghost } from 'lucide-react';
 
 const Problem: React.FC = () => {
   const painPoints = [
     {
-      title: "La Trampa del Consumo",
-      desc: "Vivir pagando intereses a bancos externos mientras tus propios sueños se quedan sin gasolina.",
-      icon: <TrendingDown className="text-amber-500" />
+      title: "El Diezmo Bancario",
+      desc: "Estás pagando un 'impuesto' eterno a los accionistas bancarios por créditos que podrías financiar tú mismo.",
+      icon: <Landmark className="text-emerald-500" />
     },
     {
-      title: "Desconexión Familiar",
-      desc: "El dinero suele ser el motivo #1 de conflicto. FAMIBAN lo convierte en el motivo #1 de unión.",
-      icon: <Users className="text-amber-500" />
+      title: "Esclavitud por Fechas",
+      desc: "Diciembre, cumpleaños, vacaciones... cada fecha importante se convierte en un ancla de deuda que arrastras meses.",
+      icon: <Clock className="text-emerald-500" />
     },
     {
-      title: "Crisis en Diciembre",
-      desc: "¿Cansado de que las épocas especiales signifiquen deudas y estrés en lugar de paz?",
-      icon: <AlertTriangle className="text-amber-500" />
+      title: "Extorsión Informal",
+      desc: "El peligro de los agiotistas que devoran la paz de tu hogar ante la falta de un respaldo financiero interno.",
+      icon: <AlertCircle className="text-emerald-500" />
     },
     {
-      title: "Hijos Sin Futuro",
-      desc: "Si no les enseñas tú a gestionar el dinero, el sistema les enseñará a ser esclavos de él.",
-      icon: <DollarSign className="text-amber-500" />
+      title: "Desangre de Linaje",
+      desc: "La riqueza sale de tu familia en mil grietas porque no existe un sistema que la retenga y la multiplique.",
+      icon: <Ghost className="text-emerald-500" />
     }
   ];
 
   return (
-    <section className="py-32 bg-[#080808] border-y border-white/5">
+    <section className="py-40 bg-[#050505] relative">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-serif font-bold mb-6 italic">El sistema tradicional te quiere solo y endeudado</h2>
-          <p className="text-lg text-slate-400 max-w-3xl mx-auto font-light">
-            Es hora de dejar de alimentar las arcas ajenas y empezar a capitalizar el amor y el esfuerzo de tu propia familia. 
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-7xl font-serif font-bold mb-8 italic">Estás financiando el futuro de extraños.</h2>
+          <p className="text-2xl text-slate-500 max-w-4xl mx-auto font-light leading-relaxed">
+            Mientras tu familia se esfuerza, las instituciones externas se quedan con el fruto de tu trabajo a través de intereses que no deberían existir.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {painPoints.map((point, idx) => (
-            <div key={idx} className="p-10 rounded-3xl bg-black border border-white/10 hover:border-amber-500/50 transition-all group">
-              <div className="mb-6 p-4 bg-amber-500/5 rounded-2xl w-fit group-hover:scale-110 transition-transform">{point.icon}</div>
-              <h3 className="text-xl font-bold mb-4 text-white group-hover:text-amber-400">{point.title}</h3>
-              <p className="text-slate-500 leading-relaxed text-sm font-light italic">{point.desc}</p>
+            <div key={idx} className="p-12 rounded-[40px] bg-black border border-white/5 hover:border-emerald-500/20 transition-all group hover:-translate-y-2">
+              <div className="mb-8 p-5 bg-emerald-500/5 rounded-3xl w-fit group-hover:scale-110 transition-transform border border-emerald-500/10">{point.icon}</div>
+              <h3 className="text-2xl font-bold mb-4 text-white group-hover:text-emerald-400 font-serif">{point.title}</h3>
+              <p className="text-slate-500 leading-relaxed font-light italic">{point.desc}</p>
             </div>
           ))}
         </div>
 
-        <div className="mt-20 p-12 bg-gradient-to-r from-amber-950/20 to-black text-white rounded-[40px] border border-amber-500/20 text-center max-w-5xl mx-auto">
-          <p className="text-2xl md:text-3xl font-serif leading-snug">
-            "No es un problema de cuánto ganas, sino de <span className="text-amber-500 font-bold">quién controla el flujo</span> de lo que ganas."
-          </p>
+        <div className="mt-32 max-w-5xl mx-auto p-1 text-transparent bg-gradient-to-r from-emerald-500/20 via-emerald-500 to-emerald-500/20 bg-clip-border rounded-[50px]">
+          <div className="p-16 bg-black rounded-[49px] text-center">
+             <p className="text-3xl md:text-4xl font-serif leading-snug text-white">
+              "El sistema bancario está diseñado para que nunca termines de pagar. <span className="text-emerald-500 font-bold italic">FAMIBAN</span> es el botón de reset de tu economía."
+             </p>
+          </div>
         </div>
       </div>
     </section>

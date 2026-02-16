@@ -1,103 +1,95 @@
 
 import React from 'react';
-import { Check, ArrowRight, Star } from 'lucide-react';
+import { Check, ArrowRight, Star, Lock } from 'lucide-react';
 
 const Pricing: React.FC = () => {
+  const waLink = "https://wa.me/573163258377?text=Hola%20Lex%20R,%20estoy%20listo%20para%20activar%20mi%20banco%20familiar";
+
   return (
-    <section id="pricing" className="py-32 bg-black text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-serif font-bold mb-6 italic">Inicia tu Dinastía Financiera</h2>
-          <p className="text-lg text-slate-500 font-light max-w-2xl mx-auto italic">
-            El precio de la improvisación es el estrés. El precio del sistema es la libertad.
+    <section id="pricing" className="py-40 bg-black text-white relative">
+      <div className="absolute inset-0 bg-emerald-500/5 blur-[200px] pointer-events-none"></div>
+      <div className="container mx-auto px-4 relative z-10">
+        <div className="text-center mb-24">
+          <h2 className="text-4xl md:text-8xl font-serif font-bold mb-8 italic">El Costo de Seguir Igual...</h2>
+          <p className="text-2xl text-slate-500 font-light max-w-3xl mx-auto italic">
+            ¿Cuánto te costará en intereses el próximo año si no tomas el mando hoy?
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-          {/* Base Tier */}
-          <div className="p-12 rounded-[50px] bg-[#0A0A0A] border border-white/10 flex flex-col h-full hover:border-white/20 transition-all">
-            <h3 className="text-2xl font-bold mb-2 uppercase tracking-tighter italic">Protocolo FAMIBAN</h3>
-            <p className="text-slate-500 mb-10 font-light italic">Acceso total al método y herramientas.</p>
-            <div className="mb-10">
-              <span className="text-5xl font-black italic">$27</span>
-              <span className="text-slate-600 ml-2 text-xl">USD</span>
-              <p className="text-xs text-slate-500 mt-2">Acceso de por vida • Pago único</p>
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
+          {/* Protocolo FAMIBAN */}
+          <div className="p-16 rounded-[60px] bg-[#0A0A0A] border border-white/10 flex flex-col h-full hover:border-white/20 transition-all relative overflow-hidden group">
+            <div className="absolute top-0 right-0 p-8 text-emerald-500/10 group-hover:text-emerald-500/20 transition-colors"><Lock size={120} /></div>
+            <h3 className="text-3xl font-bold mb-4 uppercase tracking-tighter italic font-serif">Protocolo FAMIBAN</h3>
+            <p className="text-slate-500 mb-12 font-light italic text-lg">El manual de operaciones que todo hogar necesita.</p>
+            <div className="mb-12">
+              <span className="text-7xl font-black italic text-emerald-500">$17</span>
+              <span className="text-slate-600 ml-2 text-2xl uppercase font-black tracking-widest">USD</span>
+              <p className="text-sm text-slate-500 mt-4 uppercase tracking-widest font-bold">Un solo pago • Acceso de por vida</p>
             </div>
-            <ul className="space-y-5 mb-12 flex-grow text-slate-400">
-              <li className="flex items-start gap-3">
-                <Check className="text-amber-500 mt-1 shrink-0" size={18} />
-                <span className="text-sm">Ebook Maestro (Estrategia Lex R)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-amber-500 mt-1 shrink-0" size={18} />
-                <span className="text-sm">Kit de Herramientas Excel Automatizadas</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-amber-500 mt-1 shrink-0" size={18} />
-                <span className="text-sm">Modelos Legales del Banco Familiar</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-amber-500 mt-1 shrink-0" size={18} />
-                <span className="text-sm">Bono: Guía de Retos de 30 días</span>
-              </li>
+            <ul className="space-y-6 mb-16 flex-grow text-slate-400">
+              {["Manual 'El Código FAMIBAN'", "Excel de Captación Lex R", "Acta Legal Familiar", "Guía de Retos de 30 días"].map((t, i) => (
+                <li key={i} className="flex items-start gap-4 text-lg italic">
+                  <Check className="text-emerald-500 mt-1 shrink-0" size={24} />
+                  <span>{t}</span>
+                </li>
+              ))}
             </ul>
-            <button className="w-full py-5 bg-white text-black font-black rounded-full hover:bg-slate-200 transition-all uppercase text-sm tracking-widest">
-              OBTENER EL PROTOCOLO
-            </button>
+            <a 
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-6 bg-white text-black font-black rounded-full hover:bg-slate-200 transition-all uppercase text-sm tracking-[0.2em] text-center"
+            >
+              ACTIVAR PROTOCOLO
+            </a>
           </div>
 
-          {/* Premium Tier */}
-          <div className="relative p-12 rounded-[50px] bg-black border-2 border-amber-500 flex flex-col h-full shadow-[0_0_60px_rgba(191,149,63,0.15)] transform md:scale-105">
-            <div className="absolute -top-5 left-1/2 -translate-x-1/2 px-6 py-2 gold-bg text-black text-[10px] font-black rounded-full uppercase tracking-widest shadow-xl">
-              Experiencia Elite
+          {/* Círculo Dorado */}
+          <div className="relative p-16 rounded-[60px] bg-black border-2 border-emerald-500 flex flex-col h-full shadow-[0_0_100px_rgba(16,185,129,0.2)] transform md:scale-110 z-20">
+            <div className="absolute -top-6 left-1/2 -translate-x-1/2 px-8 py-3 bg-emerald-500 text-black text-xs font-black rounded-full uppercase tracking-[0.3em] shadow-2xl">
+              FUNDADORES ELITE
             </div>
-            <h3 className="text-2xl font-bold mb-2 uppercase tracking-tighter italic gold-gradient">Círculo Dorado FAMIBAN</h3>
-            <p className="text-slate-500 mb-10 font-light italic">Crecimiento en comunidad y mentoría.</p>
-            <div className="mb-10">
-              <div className="flex items-baseline gap-2">
-                <span className="text-5xl font-black italic">$27</span>
-                <span className="text-slate-600 text-sm line-through">$147</span>
+            <h3 className="text-3xl font-bold mb-4 uppercase tracking-tighter italic font-serif text-emerald-500">Círculo Dorado</h3>
+            <p className="text-slate-500 mb-12 font-light italic text-lg">Mentoría y Comunidad exclusiva.</p>
+            <div className="mb-12">
+              <div className="flex items-baseline gap-4">
+                <span className="text-7xl font-black italic">$27</span>
+                <span className="text-slate-600 text-2xl line-through">$197</span>
               </div>
-              <p className="text-amber-500 font-bold text-xs mt-2 italic uppercase">Solo $10 USD/mes adicionales para mentoría en vivo</p>
+              <p className="text-emerald-500 font-bold text-sm mt-4 italic uppercase tracking-widest">Inversión Inicial + $10 USD/mes de mantenimiento</p>
             </div>
-            <ul className="space-y-5 mb-12 flex-grow">
-              <li className="flex items-start gap-3">
-                <Star className="text-amber-500 mt-1 shrink-0 fill-amber-500" size={18} />
-                <span className="text-sm font-bold text-white">Todo lo del Protocolo FAMIBAN</span>
+            <ul className="space-y-6 mb-16 flex-grow">
+              <li className="flex items-start gap-4">
+                <Star className="text-emerald-500 mt-1 shrink-0 fill-emerald-500" size={24} />
+                <span className="text-lg font-bold text-white italic">Todo lo del Protocolo FAMIBAN</span>
               </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-amber-500 mt-1 shrink-0" size={18} />
-                <span className="text-sm text-slate-300">Sesiones Q&A mensuales con Alexander Rincon</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-amber-500 mt-1 shrink-0" size={18} />
-                <span className="text-sm text-slate-300">Comunidad Privada de Fundadores de Bancos</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-amber-500 mt-1 shrink-0" size={18} />
-                <span className="text-sm text-slate-300">Sistema Dorado de Referidos (Comisiones)</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Check className="text-amber-500 mt-1 shrink-0" size={18} />
-                <span className="text-sm text-slate-300">Acceso a Inversiones Digitales Exclusivas</span>
-              </li>
+              {["Sesiones Q&A en vivo con Lex R", "Comunidad de Fundadores", "Sistema de Comisiones (Referidos)", "Acceso a Portafolios Digitales"].map((t, i) => (
+                <li key={i} className="flex items-start gap-4 text-slate-300 text-lg italic">
+                  <Check className="text-emerald-500 mt-1 shrink-0" size={24} />
+                  <span>{t}</span>
+                </li>
+              ))}
             </ul>
-            <button className="shimmer w-full py-6 gold-bg text-black font-black rounded-full transition-all flex items-center justify-center gap-2 uppercase text-sm tracking-widest shadow-[0_10px_30px_rgba(191,149,63,0.3)]">
+            <a 
+              href={waLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shimmer w-full py-7 bg-emerald-500 text-black font-black rounded-full transition-all flex items-center justify-center gap-3 uppercase text-sm tracking-[0.2em] shadow-[0_15px_40px_rgba(16,185,129,0.4)] text-center"
+            >
               UNIRME AL CÍRCULO DORADO
-              <ArrowRight size={20} />
-            </button>
+              <ArrowRight size={24} />
+            </a>
           </div>
         </div>
 
-        <div className="mt-24 text-center">
-          <div className="inline-flex items-center gap-6 px-10 py-5 rounded-full bg-white/5 border border-white/10 grayscale opacity-70">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" alt="PayPal" className="h-6" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" className="h-6" />
-            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" className="h-8" />
-          </div>
-          <p className="text-slate-500 text-xs mt-8 font-light italic">
-            Garantía incondicional de 7 días. Si no sientes que puedes transformar tu familia, te devolvemos tu dinero.
-          </p>
+        <div className="mt-32 text-center grayscale opacity-50 hover:grayscale-0 transition-all">
+           <p className="text-slate-600 text-[10px] uppercase font-bold tracking-[0.5em] mb-10">Transacciones Seguras</p>
+           <div className="flex justify-center gap-12 flex-wrap">
+             <img src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg" className="h-8" alt="Paypal" />
+             <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" className="h-8" alt="Visa" />
+             <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" className="h-10" alt="Mastercard" />
+           </div>
         </div>
       </div>
     </section>
